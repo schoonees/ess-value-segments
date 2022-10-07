@@ -7,3 +7,6 @@ This repository contains materials for the paper:
 The repository contains the following materials:
 
  - A PDF of the [paper](paper.pdf)
+ - Materials for reproducing the [manuscript](manuscript/)
+
+Note that this is not yet complete. In particular, the code for creating the value segments must still be added.

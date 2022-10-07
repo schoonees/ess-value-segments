@@ -1,0 +1,812 @@
+\documentclass[12pt,letter]{article}\usepackage[]{graphicx}\usepackage[]{xcolor}
+% maxwidth is the original width if it is less than linewidth
+% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0, 0, 0}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{authblk}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[round,authoryear,longnamesfirst]{natbib}
+\usepackage{txfonts}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{geometry}
+\usepackage[UKenglish]{isodate}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{pdflscape}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{rotating}
+\usepackage{siunitx}
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+
+\definecolor{Red}{rgb}{0.5,0,0}
+\definecolor{Blue}{rgb}{0,0,0.5}
+\hypersetup{%
+    hyperindex = {true},
+    colorlinks = {true},
+    linktocpage = {true},
+    plainpages = {false},
+    linkcolor = {Blue},
+    citecolor = {Blue},
+    urlcolor = {Red},
+    pdfstartview = {Fit},
+    pdfpagemode = {UseOutlines},
+    pdfview = {XYZ null null null}
+  }
+  
+\usepackage{microtype}
+\allowdisplaybreaks
+
+\newcommand{\boldtitle}[1]{\title{\textbf{\boldmath{#1}}}}
+\newcommand{\keywords}[1]{\medskip \par \noindent \textbf{Keywords}\quad #1}
+\newcommand{\mat}[1]{\mathbf{#1}}   % matrix
+\newcommand{\vect}[1]{\boldsymbol{#1}}  % vector
+\newcommand{\obs}[1]{\mathbf{#1}}        % observation
+\newcommand{\gui}[1]{\textit{#1}}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\svd}{svd}
+\DeclareMathOperator{\VEC}{Vec}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\pkg}[1]{{\fontseries{b}\selectfont #1}}
+\newcommand{\proglang}[1]{\textsf{#1}}
+\newcommand{\Prob}{\mathsf{P}}
+\newcommand{\E}{\mathsf{E}}
+\newcommand{\VAR}{\mathsf{VAR}}
+\DeclareMathOperator{\logit}{logit}
+
+
+\title{Competing for the Same Value Segments:\\ Insight into the Dutch Volatile Political Landscape}
+\author{Hester van Herk \and Pieter C. Schoonees \and Patrick J.F. Groenen \and Joost van Rosmalen}
+
+\cleanlookdateon
+\date{\today}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+\doublespace
+
+\begin{titlepage}
+\maketitle
+\thispagestyle{empty}
+\vfill
+\thanks{Hester van Herk is Professor of Cross-Cultural Marketing Research at the Department of Marketing at the VU University, Amsterdam, the Netherlands. Pieter Schoonees is Assistant Professor at the Department of Marketing Management at the Rotterdam School of Management, Erasmus University Rotterdam, the Netherlands. Patrick Groenen is Professor of Statistics and Director of the Econometric Institute, Erasmus University Rotterdam, the Netherlands. Joost van Rosmalen is Assistant Professor at the Department of Biostatistics, Erasmus MC, Rotterdam, the Netherlands. The computational tests of this research were performed on the Dutch National LISA cluster, and was supported by the Dutch National Science Foundation (NWO). Address correspondence to: Hester van Herk, Department of Marketing, VU University, De Boelelaan 1105, 1081 HV Amsterdam, the Netherlands; e-mail: \href{mailto:h.van.herk@vu.nl}{h.van.herk@vu.nl}.}
+
+\vspace*{1em}
+\end{titlepage}
+
+\newgeometry{left=1in, right=1in}
+
+\newpage
+\begin{abstract}
+Values are central to public debates today. Human values convey broad goals that serve as guiding principles in a person's life and value priorities differ across people in society. Groups in society holding opposing values (e.g., universalism versus security) will make different choices when voting in an election. Whereas over time, values are relatively stable, the number and type of political parties as well as the political values they communicate and disseminate have been changing. Groups of people holding the same human values may therefore vote for another (new) party in a later election. We focus on analyzing the relationship between human values and voting in elections, introducing a new methodology to analyze how values profiles relate to political support over time. We investigate the Dutch multi-party political system over five waves of the European Social Survey, spanning 2002 until 2010. Whilst previous research has focused on individual values separately and focused on voters only, we (1) distinguish groups holding a similar set of opposing and compatible values (values profile) instead of focusing on single values in the the entire population; (2) incorporate a correction for differences in scale use in our model (3) compare voting over time; (4) include non-voters, a growing group in Dutch society. We find evidence that specific values profiles are related to voting for a specific set of political parties. We also find that specific values profiles distinguish non-voters from voters and that voters for populist parties resemble non-voters.
+
+
+\end{abstract}
+
+
+
+
+\newpage
+\section*{Introduction}
+\doublespace
+Recent years have seen substantial changes to political landscapes in many countries \citep{meer2015}. Major established political parties  have lost ground to new parties, most notably the populist parties. Concurrently, both the proportion of the electorate choosing to abstain from voting and the proportion switching between parties are on the rise in many countries \citep[e.g.,][]{eurostat}. One possible reason for these changes in voting behaviour is that the basic human values parties emphasize have become incongruent with the values people hold. We investigate this idea in this paper.
+
+Human values refer to what people hold important in life, for example, freedom, security or power. They motivate what people do and help them to select or justify their behavior \citep{schwartz1992}. For instance, people valuing security will more likely be motivated to vote for a party that promises to ensure their safety (through security values). Moreover, people valuing universalism will likely be  more motivated to vote for a party recognising the positive aspects of immigration and understanding others (appealing at universalism values). When voting for a party reflecting their own human values, people will feel they are behaving in line with their own values. Moreover, human values are more stable over time than political values \citep{vecchione2013} and they enable predicting political choice \citep[e.g.,][]{caprara2006}.
+
+We use the currently dominant theory of human values by \citep{schwartz1992, schwartz2012}. Schwartz proposed a nearly universal structure of 10 human values, which has been validated in over 75 nations worldwide, using various measurement instruments \citep{cieciuch2013}. The theory has been used to assess differences in various behaviors including voting behaviour \citep{schwartz2015}. In the studies on voting behaviour, researchers typically took the political parties or political left-right orientation as a starting point and investigated whether and which specific values differed between parties or orientations. In this way, it is possible to determine which values distinguish one party from another; however, it is not possible to assess which parties voters may choose given their own values profile on the complete set of 10 values.
+
+In the current study we fill this gap, as we start with determining groups (segments) of people having similar profiles on all 10 values. This builds upon the recent finding that the theoretical (circular) structure of values also holds in general within individuals \citep{gollan2014,borg2015}, giving each individual a values profile in which the compatibilities and oppositions between the 10 values can be distinguished. This will be explained further in the theory section. Combined with the notion that people differ with respect to the specific value(s) they consider important and unimportant, we will determine whether distinguisable groups of people with the same values profiles exist in the population.
+
+We also address a main measurement issue in values research, which is that the absolute scores on a specific value do not matter. Rather, it is the relative score in comparison with other values that matters. For instance, it is not the absolute importance a person attaches to the value security, it is the relative importance of security to other values, such as universalism, that matters. Furthermore, as rating scales are used, measures will be contaminated with response styles \citep[e.g.][]{vaerenbergh2013,baumgartner2001}. Response styles are a general tendency to use rating scale categories independent of item content \citep{paulhus1991}. For instance, some respondents will mainly tick the "most important" category, whereas others with the same value priorities will mainly tick the "important" category. Given the differences in scale use, in values measurement, a correction for response style is considered essential \citep{schwartz2007}. As we focus on groups of respondents (segments), we employ the LC-BML model \citep{vanrosmalen2010}; this model enables us to determine values segments corrected for differences in response styles. Moreover, this model enables correcting for different kinds of response styles, not only the common ones such as extreme response style or acquiescence.
+
+Summarizing, in contrast to other studies that focused on how preferences for political parties correlated with specific values \citep{caprara2006, thorisdottir2007, caprara2012}, we look from the perspective of the individual and focus on how their complete values profiles relate to voting for (homogeneous groups of) political parties or to abstain from voting. In particular, our contributions are: 
+(1) Assessing how many values segments can be distinguished in the population;
+(2) Exploring how these segments relate to voting over time, taking into account that the parties participating in the elections may change, and that people may abstain from voting; and
+(3) Exploring whether voting for political parties can be predicted using values segments.
+
+We illustrate our approach by using data from the Netherlands, a nation with a multi-party system where many new parties enter the  political arena, such as in the recent 2017 elections. Moreover, compared to other nations, the Netherlands is a nation in which electoral volatility is very high \citep{dassonneville2013} making the Netherlands a suitable setting for our study.
+
+In the next section, we briefly review the theory of human values.
+
+\section*{Human Values}
+
+Human values convey broad goals that serve as guiding principles in a person's life for the selection of behaviours and the evaluation of behaviours and events \citet{schwartz1992}. In the current dominant theory of individual values, \citet{schwartz1992}  distinguishes 10 distinct values, benevolence, universalism, self-direction, stimulation, hedonism, achievement, power, security, conformity and tradition. 
+
+Benevolence refers to protecting the well-being of people with whom one has frequent personal contact. Universalism refers to understanding, tolerating and protecting all people, including those far away and it also includes taking care of nature and the natural environment. Self-direction entails valuing independent thought, opting for action, and being creative and investigative. Stimulation refers to valuing exciting, new and challenging things. Achievement refers to showing personal success by demonstrating competences according to social standards. Power refers to valuing social status and prestige by having control over people and resources. Security refers to safety, harmony, and stability of society, of relationships, and of self. It entails two types of security; one that focuses primarily on individual interests (e.g., avoiding danger, living in a secure environment), the other focuses wider group interests (e.g., having a strong government). Conformity refers to restraint of actions, tendencies, and impulses that can upset or harm others and violate social expectations or norms. Finally, tradition refers to valuing respect for, involvement in and acceptance of ideas that traditional culture or religion requires from people. 
+
+These 10 values are organized in a circular structure that represents the compatible and opposing relationships between the values. Here we briefly discuss this structure, as can be seen in Figure~\ref{F:schwartz-circle}. Relationships between values such as benevolence and universalism or between benevolence and tradition are positive and result in positions adjacent to each other on the circumplex. Benevolence and universalism share the acceptance of others and having concern for their welfare and benevolence and tradition share the importance of involvement in the in-group. The opposing power and benevolence do not coincide as valuing "dominance over others" (power) conflicts with valuing  "protecting the well-being of people with whom one has frequent personal contact" (benevolence); the conflicting perspectives result in a position on opposite sides of the circumplex. 
+
+\begin{figure}
+\centering
+  \includegraphics[width=0.5\textwidth]{figures/Schwartz-Circle-v2.pdf}
+  \caption{Schwartz's value circumplex.} 
+  \label{F:schwartz-circle}
+\end{figure}
+
+Studies on human values have long focused on the structure of values across all individuals in a sample. Recent research by \citet{borg2015} shows that the circular structure of values not only exists across individuals, but also tends to hold on an individual basis. Suppose the structure in Figure~\ref{F:schwartz-circle} holds for a particular individual. If she considers benevolence to be of the highest importance, then she will consider the value power to be the least important. Based on this choice of benevolence as the most important, the individual will either consider tradition or universalism as the second most important value. This follows from the adjacency of these values to benevolence in Figure~\ref{F:schwartz-circle}. Suppose she prefers universalism over tradition, then the theory predicts that she will also consider self-direction important, and security and conformity less important.
+
+As people differ in the importance they attach to the different values, we expect that there are distinct groups of people sharing the same value priorities. For instance, there might not only be a group considering security values of highest importance and considering stimulation values of low importance, but also a group considering universalism values of utmost importance and opposing power values. 
+
+ 
+\section*{Dutch Politics and Political Orientation}
+For readers unfamiliar with the Dutch politics, we now describe developments in the Dutch political landscape over the last two decades. Important developments include both specific events and the emergence and disappearance of political parties.
+
+As in other Western nations, Dutch politics have seen a number of important events during the first decade of the 21st century. A main development concerns the emergence of populist parties such as Liveable Netherlands (LN), TON, LPF and PVV. Recent evidence from other countries indicate that this trend is not unique to the Netherlands (e.g., the rise of Front National in France, and of the AfD in Germany). Specific events, such as the September 11 attacks in the United States in 2001, the assassination of the LPF leader Pim Fortuyn shortly before the general election in 2002 (May 6), and the murder of film director Theo van Gogh\footnote{Van Gogh, critical of aspects of Islam in his work, was murdered by radical Dutch Muslim Mohammed Bouyeri, sparking a number of retaliatory incidents.} (November 2, 2004) have helped underscore the issues of the populist parties.   
+
+For a long time there have been three main political parties in the Netherlands: CDA, PvdA and VVD (religious, libertarian/left and right respectively); these parties enjoyed over 80\% of the votes in the 1989 elections. They still enjoyed over 60\% of the votes in 2002. Since 2008, other parties have become larger, such as the left-wing Socialist Party (SP) (9.8\% in 2010) and the populist PVV (15\% in 2010). The growth of these latter parties came at the expense of the three long-established parties. In the 2017 elections, five parties received only about 70\% of the votes; the VVD, PVV, CDA, D66 and GL (Green Left) now belong to the larger parties. Another change during the last decade is that the number of small parties with a few seats in parliament is increasing; for instance a party focused on animal welfare (PvdD) has five seats, and a party focused on the elderly (50PLUS) has four. Consequently, 13 parties are now represented in the Dutch parliament: the political landscape has become more diverse. 
+
+In the last years the larger old established parties, a few smaller parties with a specific program (e.g., PvdD focussing on animal rights) and the populist party (PVV) coexist. To describe the political arena in the Netherlands, \citet{aarts2008} identify three dimensions: left versus right, authoritarian versus libertarian and religious versus secular. In their context, left (right) indicates opposition to (support for) differences in social equality between people and support for (opposition to) a strong role for government in society. In particular, right is primarily opposed to the state having a strong influence on the economy: it considers private enterprise important and accepts inequality in society. Authoritarian versus libertarian primarily relates to dealing with people from other cultures and law enforcement. On the libertarian side, people are open to other cultures and non-conformist practices such as abortion or euthanasia, whereas authoritarians are more traditional, less open to foreign cultures and consider law enforcement to be important. Finally, the religion dimension concerns the role that the church should play in society on moral issues. These three dimensions are not independent, left coincides with libertarian and right with authoritarian. 
+
+According to  \citet{aarts2008}, in the Netherlands the religious dimension distinguishes the strictly religious SGP (Reformed Political Party), the CU (Christian Union) and to a lesser extent the CDA (Christian Democrats) from the other parties. The libertarian versus authoritarian dimension distinguishes the D66 (Democrats 1966), GL (Green Left), PvdA and SP (both socialist parties) from the other parties. Finally, the left-right dimension distinguishes the VVD and the new populist parties, such as the PVV, from the other parties. In the next sections we will use this categorization of Dutch parties based on these larger political orientations: the religious (SGP, CU, CDA), libertarian left-wing (GL, D66, PvdD), left-wing (PvdA, SP), right-wing (VVD), and populist (LPF, LN, PVV, TON) categories. We will add non-voters as a separate category. Each of these (groups of) parties focuses on specific topics that might appeal to basic human values held by different segments of people in the electorate. 
+
+In the next section, we discuss our expectations on relations between values segments and political orientation.
+
+\section*{Expectations}
+
+In this exploratory study, the number and type of values segments that will emerge is purely data driven. Yet the literature points to some types of segments that will likely be uncovered. While the priority people give to specific human values are relatively stable over time \citep{schwartz2006}, the political landscape in Europe, and in the Netherlands in particular, has changed due to the emergence and disappearance of political parties in recent years. This suggests that for some (segments of) voters their best-fitting political parties may have changed. As most people aim to achieve congruence between their values on the one hand and behaviour on the other \citep{edwards2009}, this implies that people may feel the need to change their vote to another (new) political party. 
+
+Below we list our four main expectations:
+
+\begin{enumerate}
+\item We expect that people who highly value universalism and self-direction, and to a lesser extent benevolence, have a positive stance toward outgroups and people who are different from themselves, such as immigrants or refugees \citep{davidov2008,schwartz2010}. They value equal opportunities and taking initiative. When individuals are driven by values such as universalism and self-direction, they will be less motivated to have control, status and be secure and safe. Consequently, values such as power and security will be considered less important. Such a values profile is congruent with programs of left-wing and libertarian political parties \citep{caprara2006}. We therefore expect that there is a segment considering benevolence, universalism, self-direction and stimulation of particular importance, and power and security values of low importance which predominantly votes for left or libertarian parties. 
+
+\item For people who consider the security values and the adjacent power values relatively more important, it is important to keep the status quo. They prefer a stable society in which traditions are respected and conflicts with existing social standards and expectations are minimized. When power, security, and tradition drive their attitudes and behaviours they are willing to accept that they need to trade-off these values with universalism and self-direction values. This means they are willing to accept less freedom and independence (de-emphasizing self-direction), to be able to live a familiar and safe environment (emphasizing security). For people holding such a values profile, there is a clear congruence with right-wing parties that emphasize maintenance of the status quo, acceptance of inequality in society and strict rules, which relate to power, security and tradition but oppose universalism and self-direction. Moreover, the right-wing parties also emphasize the negative side of immigration, which is compatible with security (and opposes universalism). We therefore expect that there is a segment emphasizing power and security values and opposing universalism values anticipated to vote for right-wing or authoritarian parties.
+
+\item Religiousness is positively related to the values conformity and tradition \citep{schwartz1995}. Being strictly religious coincides with traditional (gender) roles, conformity to rules, and taking care of people in the ingroup. Values such as tradition and conformity are held at the expense of opposite values such as hedonism and stimulation. In addition, the religious are expected to consider benevolence to be more important than universalism as benevolence values emphasizes the traditional in-group more. A resulting circular values profile, with tradition values important and stimulation unimportant, resonates with the values of the religious parties that consider the role of the church in society of key importance. Specifically, it is expected that there is a segment highlighting conformity, tradition, and security as highly important and considering the opposing values self-direction, stimulation, and hedonism as opposed to their values. We expect such a segment to vote for religious parties.
+
+\item In the aforementioned three segments, we assume people to have a clear distinct values profile on the ten values, with some values being important guiding principles and other values being opposed to these important values with the remaining values in between. However, some people may have less outspoken value preferences and may consider all values of about equal importance. Such a less distinct values profile may have a substantive or a methodological reason. Only a small part of the population  may have outspoken values profiles in which clear trade-offs between values are made, which may be an adaptive tendency \citep{borg2015}. Moreover, it may be easier to function if one does not have very strong value preferences or rejections, as the number and severity of conflicts one encounters then may be less. A methodological reason may be that respondents may not differentiate between the value items because they find the items in the questionnaire too difficult or abstract, or are less motivated to fill in the questionnaire and just tick what is easiest, also called a satisficing response tendency \citep{kaminska2010}. Given this, we expect that there will be segments where people have values profiles that resemble the three aforementioned ones, but there may also be other segments; these latter segments may even reflect response styles rather than substantive content. 
+
+\end{enumerate}
+
+Finally, we expect to make some interesting findings about non-voters. This group includes both people who are not eligible to vote, for instance people younger than 18 and non-Dutch citizens, and eligible voters who decided not to vote. In the analysis, we also aim to find a values profile associated with not voting. There is very little research on the relation between values and not voting. An exception is the study in Italy by \citet{caprara2012}, which suggests that non-voters' values may not resonate with the values existing political parties advocate. In the Netherlands, universalism is advocated by libertarian left-wing; tradition by religious parties; and power and security by right-wing parties. Given the circular theoretical structure of values (see Figure 1), we expect that non-voters will consider other values than universalism, power, security and tradition as the most important guiding principles in their lives. 
+
+Summarizing, we expect to find a small number of segments of people differing in the importance they attach to the 10 human values. These segments are then linked to voting behaviour. Our expectations are to uncover both segments of people with clear values profiles, as well as other segments with potentially less pronounced profiles. There is no guarantee that all segments will be compatible with Schwartz's theory.
+
+\section*{Response Styles}
+
+Response styles have long been acknowledged as an issue in public opinion research \citep[for example,][] {peter2011,greenleaf1992,alwin1985,bachman1984,cunningham1977,oneill1967}. When answering survey questions using rating scales, people use the scale in a different way. Some tend to use the positive side of the scale, whereas others prefer to spread the answers across all available response categories, and still others prefer using the extreme categories only. Such differences in scale use contaminate the findings as they do not reveal differences in substantive content. For instance, a person using the scale categories "1" and "2", and another person using the categories "2" and "3" can have the same values profile; the only difference is in the average across all values. Such a difference needs to be corrected for. Furthermore, some response styles can be problematic such as a style where people hardly differentiate between items (e.g., use one scale category only). In values research correcting for response styles is a recommended procedure \citep{schwartz2007} and we use the LC-BML model \citep{vanrosmalen2010} that enables us to separate response style from substantive content in segmentation studies. Next, we introduce this model.
+
+\section*{The LC-BML Model}
+
+To determine values segments free from response styles, we use the latent-class bilinear multinomial logit model \citep[LC-BML model;][]{vanrosmalen2010}. This model is a multivariate generalization of the standard multinomial (or baseline-category) logit model for multinomial responses \citep[e.g.][]{agresti2002}, which in turn is the multicategory extension of logistic regression. The multinomial logit model describes the probability that a respondent answers a single item with a given rating. The LC-BML model combines such models for multiple items in order to describe the responses of a respondent on all items simultaneously. The input for the model are items measured on rating scales; in the model the rating categories are considered as nominal and thus categories such as "no answer" can be added.
+
+Furthermore, the model allocates all respondents into two types of segments (or latent classes), namely values and response style segments. This is done by allowing the model parameters to vary between segments. The response style segments correct for the differences in response styles, while the value segments indicate differences in the importance attached to the respective values. Hence each person is assigned simultaneously to both a response style segment and a value segment by the LC-BML model. 
+
+We will now describe the LC-BML model in more detail requiring some notation. Let $Y_{ij}$ be the random variable denoting the response of respondent $i \; (i = 1, \ldots, N)$ to item $j$. Index by $k \; (k = 1, \ldots, K)$ the common rating scale used for all $J$ items. Missing responses are included by adding a dedicated `Missing' category to the rating scale. Let there be $R$ and $S$ latent classes for the response style and value segments respectively. Supposing that $\pi_{rs}$ is the prior probability that any respondent belongs to segments $r$ and $s$, it follows that
+\begin{equation}
+  \Prob (Y_{ij} = k)  = \sum_{r=1}^{R} \sum_{s=1}^{S} \pi_{rs} \Prob (Y_{ij} = k \, | \, r, s).
+\end{equation}
+In the LC-BML model, the segment-specific probabilities follow multinomial logit models such that
+\begin{equation}
+  \Prob (Y_{ij} = k \, | \, r, s) = 
+    \frac{\exp \left( \eta_{ijk \, | \, r, s} \right)}
+         {\sum_{k = 1}^{K} \exp \left( \eta_{ijk \, | \, r, s}  \right)},
+\end{equation}
+where $\eta_{ijk \, | \, r, s}$ is a segment-specific linear predictor. The basic form of the linear predictor is 
+\begin{equation}
+  \eta_{ijk \, | \, r, s} = \alpha_{k \, | \, r} + \sum_{l=1}^{L} \vect{\beta}_{kl}^{'} \vect{x}_{il}
+    + \gamma_{jk \, | \, s}.
+    \label{E:linpred}
+\end{equation}
+Here $\alpha_{k \, | \, r}$ is the attractiveness of rating $k$ in response style segment $r$, $\vect{x}_{il}$ is an indicator vector indicating which category of the (discretized) socio-demographic variable $l \; (l = 1, \ldots, L)$ person $i$ belongs to, $\vect{\beta}_{kl}^{'}$ is the transpose of the vector of effects for this socio-demographic variable on category $k$, and $\gamma_{jk \, | \, s}$ is the effect of rating $k$ on item $j$ in value segment $s$. Finally, a bilinear decomposition is applied to the parameters in \eqref{E:linpred}, a description of which is deferred to the \hyperref[S:App]{Supporting Information}. This decomposition serves two purposes, namely to reduce the number of parameters to be estimated and to allows for all effects to be interpreted graphically in biplots. Note that the dimensionality $P$ of this decomposition determines the dimensionality of these biplots. 
+
+For a given choice of the number of segments $R$ and $S$, and dimensionality $P$, the LC-BML model is estimated by maximum likelihood via the Expectation-Maximization \citep[EM;][]{dempster1977} algorithm. The likelihood contribution of person $i$ is given by
+\begin{equation}
+  \sum_{r=1}^{R} \sum_{s=1}^{S} \pi_{rs} \prod_{j=1}^{J} \prod_{k=1}^{K}
+    \Prob (Y_{ij} = k \, | \, r,s)^{I(y_{ij} = k)},
+\end{equation}
+with $y_{ij}$ being the realized value of $Y_{ij}$ and $I(\cdot)$ the indicator function. An important by-product of the estimation algorithm is the estimated posterior probabilities of each person belonging to each of the $R \times S$ latent classes, which can be calculated as
+\begin{equation}
+  \pi_{rs} (i) = 
+    \frac{\pi_{rs} \prod_{j = 1}^{J} \prod_{k=1}^{K} 
+           \Prob (Y_{ij} = k \, | \, r,s)^{I(y_{ij} = k)}}
+         {\sum_{r=1}^{R} \sum_{s=1}^{S}
+         \pi_{rs} \prod_{j = 1}^{J} \prod_{k=1}^{K} 
+           \Prob (Y_{ij} = k \, | \, r,s)^{I(y_{ij} = k)}}.
+  \label{E:posterior}
+\end{equation}
+
+The model gives a posterior measure of class membership for all individuals. These measures can for instance be aggregated over the respondents' self-reported voting behaviour to establish how people within each segment voted. Information criteria, such as the Akaike Information Criterion \citep[AIC;][]{akaike1974} or Schwarz's Bayesian Information Criterion \citep[BIC;][]{schwarz1978} can be used to select the number of segments $R$ and $S$, as well as the dimensionality $P$. An alternative is the graphical CHull procedure of \citet{ceulemans2011}. We opt for a combination of the BIC and the CHull procedure. The BIC has been shown to work well in conjunction with the LC-BML model \citep{vanrosmalen2010}.
+
+\section*{Methodology}
+
+\subsection*{Data}
+
+
+
+
+
+
+
+This study uses five rounds of the European Social Survey (ESS), namely those of 2002, 2004, 2006, 2008 and 2010. The ESS is a large scale high-quality cross-national survey conducted biennially in approximately 25 European countries, including the Netherlands \citep{jowell2007}. The survey covers representative samples of individuals of 15 years or older who live in the respective nations, with in total 9741 respondents from the Netherlands.
+
+For the current study, we use the 9511 Dutch respondents from the 5 ESS waves for which information on key variables were available. For details on data collection procedures, see \url{www.europeansocialsurvey.org}. The number of respondents per ESS wave were 2323, 1854, 1845, 1713 and 1776 respectively.
+
+\subsection*{Measures} 
+
+
+
+
+We use the 21 value items available in the ESS \citep[Schwartz Portrait Values Questionnaire, PVQ21;][]{schwartz2001,schwartz2007}, which measures the 10 different values. Each of these values are measured by two items, except for universalism. Universalism has three items, because it covers both tolerance to people in the outgroup as well protection of nature. All items are gender-specific and operationalized by statements such as one of the items on self-direction: `Thinking up new ideas and being creative is important for her. She likes to do things in her own original way.' The answering scale for the PVQ-ESS is a 6-point Likert scale, ranging from 1 (`Very much like me') to 6 (`Not like me at all'); the category 7 ("no answer") was added when scores were missing. In total, 134 respondents were removed who supplied no information on the 21 value items.
+
+We include demographic information on age, gender and education. Since discrete covariates are required for the LC-BML model, both years of education and age were discretized into three categories. For years of education, the categories were low (1 to 10 years; comparable to ISCED\footnote{See \url{http://www.uis.unesco.org/Education/Documents/isced-2011-en.pdf}.} levels 1 and 2), intermediate (11 to 15 years; ISCED levels 3 -- 5) and high (16+ years; ISCED level 6 or higher). Age was divided into the categories 15 to 34 years, 35 to 59 years and 60 to 96 years. Respondents with missing values for the above-mentioned socio-demographic variables were removed from the analysis (85 persons), together with respondents who used the same rating to answer all 21 value items (11 persons). After removing these respondents, 9511 observations were used in the LC-BML analysis. Note that although sampling weights are applicable in the ESS, it was not possible to apply them in the LC-BML analysis due to software limitations. We do however apply post-stratification weights in summary statistics, which corrects for the sampling design and unit non-response. 
+
+In the ESS, respondents were also asked to indicate whether they voted in the most recent elections for the Second Chamber of Parliament\footnote{This is the main legislative body of the Netherlands.}, and, if so, for which political party. For the 2002 survey, this concerned the Dutch elections of 6 May 2002, for 2004 the elections of 22 January 2003, for both 2006\footnote{Data collection for the third ESS wave started in September 2006, before the election took place in November. Respondents interviewed before the election were asked who they intended to vote for. After the election they were asked who they actually voted for. Roughly half the sample were interviewed before the election. In the questionnaire, LN was still given as a voting option. However, LN disbanded before the 2006 elections, hence we do not consider LN when interpreting voting behaviour after 2004.} and 2008 the elections of 22 November 2006 and for 2010 the elections of 9 June 2010. The official election results are given in Table~\ref{T:NL_perc_vote} in the \hyperref[S:App]{Supporting Information}. Of the people who indicated that they voted, not all people disclosed the party they voted for. The disclosure rates for those who indicated that they voted were quite high at 97.9\%, 96.6\%, 95.1\%, 96.4\% and 96.0\% respectively. 
+
+Note that voting is not mandatory in the Netherlands. In recent elections, roughly 75\% to 80\% of the electorate chose to vote for the Second Chamber of Parliament. The weighted proportion of eligible respondents in our sample who indicated that they voted is slightly higher at 86.4\%, 82.4\%, 83.3\%, 86.1\% and  84.4\% for the 5 ESS waves respectively. For our analyses, we include an explicit category, in addition to the party voted for, for respondents who chose not to vote. In addition to the people who deliberately chose not to vote, approximately 7.1\% of the sample was not eligible to vote, mostly on account of being younger than 18 at the time of the election. The latter two groups are merged in our analyses. 
+
+\subsection*{Analysis Procedure}
+
+We start the analyses with estimating the value segments and response style segments with the LC-BML model. To enable the correction for response styles, all 21 value items are used as input for the analysis. We do not combine the items into the 10 value types. The latter is an advantage as we can still observe differences in topics considered important by the respondents; for instance, universalism includes not only equality of people but also care for nature and security includes both national security and security in the familiar environment. Next, we use correspondence analysis to determine and vizualize the relationships between values segments and voting over time. Finally, to assess whether values segments can be used to predict voting for specific groups of political parties, we perform multinomial logistic regression analysis.
+
+When discussing voting results below, we will use weights to relate socio-demographics to voting over time. Since the results of the relevant elections are publicly available at the population level (see Table~\ref{T:NL_perc_vote}), we use these to recalibrate the post-stratification weights from the ESS before analyzing the voting behaviour. These recalibrated weights are constructed so that the proportion of votes for all competing parties as well as the proportion of nonvoters in the observed sample match the official election results as closely as possible. Iterative proportional fitting, also known as raking, was used to construct these weights separately for each wave of the ESS \citep[see Chapter 8 of][for example]{lohr1999}. These weights are subsequently used whenever voting behaviour is considered. This recalibration procedure also adjusts for the respondents not eligible to vote in the elections, as well as the small proportion who did vote but either chose not to disclose for which party they voted, or could not recall which party they supported. This is done by increasing the weights of the remaining respondents such that the total weight for the eligible voters equals that of the entire sample. 
+
+\subsection*{Model Selection}
+
+In order to select the most appropriate model, we fitted the LC-BML model for $R = 1, 2, \ldots, 20$ response style segments, $S = 1,2,  \ldots, 12$ value segments, and $P = 1, 2$ dimensions. In total 480 different models were considered; however 9 models did not converge in the allotted number of EM iterations (10 000) and were discarded. The EM algorithm is however only guaranteed to find a local optimum of the likelihood function. We therefore estimated each of these models for 20 different random starts to increase our chances of finding the global optimum. Only the start which resulted in the highest value of the likelihood function is retained. 
+% A numerical convergence criterion of $10^{-5}$ was used.
+
+
+We plotted the maximized log-likelihood values against the model degrees-of-freedom for the 471 models. The convex hull enclosing the cloud of points can then be determined. We reduced the model selection problem by considering only the models that lie on this hull, similar to the CHull prodecure of \citet{ceulemans2011}. These models can be considered to present a good trade-off between complexity and data fit. We selected the model with $R = 20$ response styles, $S = 7$ values segments and $P = 2$ dimensions from the remaining 23 models, since it is more parsimonious than the more complex models. Our chosen model obtained the fourth lowest BIC value, but used significantly fewer degrees-of-freedom than the other models in the top five, ranked according to BIC. We now proceed to describe and interpret the results from this model.
+
+\section*{Results}
+
+
+\begin{table}
+\centering
+\renewcommand{\arraystretch}{1.25}
+\scriptsize
+\begin{tabularx}{\linewidth}{llXlc} 
+\toprule
+\textbf{Value} & \textbf{Code} & \textbf{Item} &  \textbf{Description} & \textbf{Average Rating} \\
+\midrule
+Benevolence & BE1 &  It's very important to him to help the people around him. He wants to care for their well-being.
+      &  Help others & 2.27 \\[0.5em]
+    
+      & BE2 & It is important to her to be loyal to her friends. She wants to devote herself to people close to her.
+      &  Loyalty & 2.16 \\[0.5em] \midrule
+    
+Universalism & UN1 &  He thinks it is important that every person in the world should be treated equally. He believes everyone should have equal opportunities in life. 
+    & Equality & 2.11 \\[0.5em]
+ & UN2 & It is important to him to listen to people who are different from him. Even when he disagrees with them, he still wants to understand them.
+    & Understand others & 2.43 \\[0.5em]
+ & UN3 & She strongly believes that people should care for nature. Looking after the environment is important to her.
+    & Care for nature & 2.31 \\[0.5em] \midrule
+Self-Direction & SD1 & It is important to her to make her own decisions about what she does. She likes to be free and not depend on others.
+    &   Independent & 2.11 \\[1em]
+& SD2 & Thinking up new ideas and being creative is important to her. She likes to do things in her own original way. 
+    &  Creative & 2.46 \\[0.5em] \midrule
+Stimulation & ST1 & He likes surprises and is always looking for new things to do. He thinks it is important to do lots of different things in life.
+    &  Look for new things & 2.85 \\[0.5em]
+ & ST2 & He looks for adventures and likes to take risks. He wants to have an exciting life.
+    &  Excitement & 3.72 \\[0.5em] \midrule
+Hedonism & HE1 & Having a good time is important to her. She likes to spoil herself. &  Have a good time & 3.04 \\[0.5em] 
+ & HE2 & He seeks every chance he can to have fun. It is important to him to do things that give him pleasure.
+    &  Have fun & 2.52 \\[0.5em] \midrule
+Achievement & AC1 & It's important to her to show her abilities. She wants people to admire what she does.
+    &  Be admired & 3.27 \\[0.5em] 
+ & AC2 & Being very successful is important to him. He hopes people will recognise his achievements.
+    &  Be successful & 3.26 \\[0.5em] \midrule
+Power & PO1 & It is important to her to be rich. She wants to have a lot of money and expensive things. 
+    &  Be rich & 4.18 \\
+ & PO2 & It is important to her to get respect from others. She wants people to do what she says.
+    &  Get respect & 3.40 \\[0.5em] \midrule
+Security & SE1 & It is important to him to live in secure surroundings. He avoids anything that might endanger his safety.
+    &  Security & 2.80 \\[0.5em]
+ & SE2 & It is important to her that the government ensures her safety against all threats. She wants the state to be strong so it can defend its citizens. 
+    &  Strong government & 2.73 \\[0.5em] \midrule
+Conformity &  CO1 & He believes that people should do what they're told. He thinks people should follow rules at all times, even when no-one is watching.
+    & Follow rules & 2.95 \\[0.5em]
+ & CO2 & It is important to her always to behave properly. She wants to avoid doing anything people would say is wrong.
+    &  Behave properly & 2.85 \\[0.5em] \midrule
+Tradition & TR1 & Tradition is important to her. She tries to follow the customs handed down by her religion or her family.
+    &  Tradition & 2.86 \\[0.5em]
+ & TR2 & It is important to him to be humble and modest. He tries not to draw attention to himself.
+    &  Modesty & 3.29 \\[0.5em]
+\bottomrule
+\end{tabularx}
+\caption{The 21 value items from the ESS and their weighted average ratings for the Dutch sample. The unadjusted post-stratification weights supplied in the ESS were used to calculate the weighted averages. A six point scale was employed, with one being the highest possible score, and six being the lowest possible score.}
+\label{T:val_items}
+\end{table}
+
+\subsection*{Response Styles}
+
+
+
+
+
+
+
+
+
+\begin{knitrout}\footnotesize
+\definecolor{shadecolor}{rgb}{0.961, 0.961, 0.961}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{Loading required package: ca}}\end{kframe}
+\end{knitrout}
+
+
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.65\textwidth]{figure/Paper-respstyle-facets-1}
+  \caption{The distribution of each response style across all rating categories and values segments. All values are percentages. The size of the segment, as a percentage, is given in parentheses after its number in the vertical axis labels.}
+  \label{F:respstyle-facets}
+\end{figure}
+
+
+Our selected model has 2 dimensions, 20 response styles and 7 values segments. The response style segments indicate that respondents indeed differ in the way they use the rating scale for assessing the 21 value items. Figure~\ref{F:respstyle-facets} (left panel) gives the proportion of responses in each response style (RS) segment that was attributed to each of the ratings. Colours are used to highlight larger values. It is evident that a variety of response styles have been detected. The largest styles (RS1 -- RS3) concentrate on using ratings one through five, but very few sixes. RS4 focuses on using ratings two and three, while RS5 uses the breadth of the rating scale. RS9 and RS10 can be described as midpoint scoring, while RS16 comprises extreme scoring focusing on categories 1 and 6. RS18 and RS20 contain a disproportionate number of missing values. These results show that there is indeed substantial heterogeneity with respect to rating scale use. 
+
+
+
+
+Figure~\ref{F:respstyle-facets} also shows the association between the response style segments and values segments. The percentages in each column sums to one, showing which segments each response style is associated with. Some response style segments are often strongly associated with a single value segment. This is especially true for Segments V and VII. Specifically, Segment VII associates strongly with response styles RS18 and RS20 (missing values on many value items), and Segment V with RS13 -- RS16 and RS19. The latter include some well-known styles \citep[see][for example]{baumgartner2001}, such as response range (RS13), acquiescence (RS14 and RS15), extreme responding (RS16) and disacquiescence (RS19). As Segment VII reflects a small segment of people (comprising 1.1\% of the sample) who evidently skipped questions, we do not further describe this segment in the next sections. We will come back to the issues in Segment V when describing this segment in the next sections.
+
+\subsection*{Values Segments}
+
+\begin{table}[ht]
+\renewcommand{\arraystretch}{1.25}
+\footnotesize
+\centering
+\begin{tabular}{ccccccc}
+  \toprule
+   & \multicolumn{5}{c}{\textbf{ESS Wave}} \\ \cmidrule{2-6}
+ \textbf{Segment} & \textbf{2002} & \textbf{2004} & \textbf{2006} & \textbf{2008} & \textbf{2010} & \textbf{Overall} \\ 
+  \midrule
+  I & 21.4 & 22.2 & 22.5 & 21.2 & 22.7 & 22.0 \\ 
+  II & 18.3 & 18.8 & 18.2 & 18.5 & 19.3 & 18.6 \\ 
+  III & 16.1 & 15.2 & 13.6 & 14.9 & 12.3 & 14.5 \\ 
+  IV & 12.8 & 13.1 & 16.8 & 16.8 & 16.3 & 15.0 \\ 
+  V & 16.0 & 15.7 & 13.2 & 14.1 & 13.2 & 14.5 \\ 
+  VI & 14.3 & 13.9 & 15.0 & 13.4 & 14.7 & 14.3 \\ 
+  VII & \hphantom{6}1.1 & \hphantom{6}1.1 & \hphantom{6}0.8 & \hphantom{6}1.1 & \hphantom{6}1.6 & \hphantom{6}1.1 \\ 
+   \bottomrule
+\end{tabular}
+\caption{Values segment sizes per year (in percentage), using unadjusted post-stratification weights. Each column sums to 100.} 
+\label{T:segsizes_vs_yr}
+\end{table}
+
+
+The bilinear decomposition in the LC-BML model represents the values segments in two dimensional perceptual maps or biplots. The first dimension distinguishes positive responses (1 = ``very much like me"), from very negative responses (6 = ``not like me at all"), with the other response categories arranged in between. The second dimension distinguishes responses in the middle of the rating scale indicating moderate importance (3 and 4) from the category "no answer". From a substantive viewpoint, the first dimension is the most informative. We base the discussion below on this dimension only, using one-dimensional plots included in the main text, and defer the full two-dimensional plots to the \hyperref[S:App]{Supporting Information}.
+
+\begin{knitrout}\footnotesize
+\definecolor{shadecolor}{rgb}{0.961, 0.961, 0.961}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\color{warningcolor}{Warning in readChar(con, 5L, useBytes = TRUE): cannot open compressed file 'NLCoordinates.RData', probable reason 'No such file or directory'}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in readChar(con, 5L, useBytes = TRUE): cannot open the connection}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in substr(Items\$Value, 1, 2): object 'Items' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in substr(Items\$Value, 3, 3): object 'Items' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in factor(segnms\_2017[Items\$time], levels = segnms\_2017): object 'Items' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in levels(Items\$Segment) <- seglevs\_perc: object 'Items' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in ifelse(Items\$x > 0, 2, 1): object 'Items' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in ifelse(Items\$x > 0, 1.3, -0.3): object 'Items' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in subset(Items, time != 7): object 'Items' not found}}\end{kframe}
+\end{knitrout}
+
+The seven values segments, Segments I through VII, reveal different value priorities which can be seen in the barplots in Figure~\ref{F:seg-barplots}. For ease of interpretation, the bars are coloured green for values considered more important than average and red for those considered less important than average. The value items are grouped by value (e.g., the two benevolence items, BE1 and BE2, are next to each other), and ordered according to Schwartz' theory. Next, we interpret each value segment, in descending order according to size.
+
+\emph{Segment I}. Segment I in the left upper corner in Figure~\ref{F:seg-barplots} is the largest group, comprising roughly 22.0\% of the sample. From the figure, we see that this segment considers the values universalism, benevolence, and to a lesser extent self-direction as being important guiding principles in their lives. Values opposing these values such as power and achievement are scored as unimportant, which means being motivationally incompatible with their values. It is interesting to observe that in this segment stimulation and in particular the item on `living an exciting life' (ST2), is considered to be completely opposed to their values. In the values profile of Segment I, the trade-off that may be experienced between the values benevolence (BE) and universalism (UN) versus power (PO) and achievement (AC) in Schwartz' theory is clearly present. 
+
+\emph{Segment II}. In comparison with Segment I, people in Segment II  (18.6\%) do have a less outspoken values profile that clearly follows the values theory. People in Segment II do not clearly oppose values as people in segment I do. However, in comparison to the other segments, they consider the values self-direction (independence), security and achievement as relatively important, whereas tradition (and humility in particular) is considered opposed to their values.
+
+
+\emph{Segment III}. Compared to the other segments, people in Segment III (14.5\%) consider the conservation values (security, conformity and tradition) far more important as guiding principles in their lives than the other segments do. They also oppose the openness values, and stimulation and hedonism in particular. The value priorities of people in this segment follow the circumplex structure. They make a trade-off between conservation values and openness values; for instance, to be able to live properly and follow the customs handed down by religion or family (CO2 and TR1) they are willing to give up an exciting life (ST2) and looking for new things to do in life (ST1).
+
+
+\emph{Segment IV}. People in Segment IV (15.0\%) place relatively great emphasis on self-direction (SD1, independence), universalism (and UN2, understanding others different from them in particular). Tradition (TR) and conformity (CO) are opposed to these values. Values representing making independent decisions are the main motivation of people in this segment; power and being rich is not important. A clear trade-off is made between these sets of values, as can be seen in Figure~\ref{F:seg-barplots}. Being independent, open to others and being loyal to friends are key values and to attain this, people in segment IV are willing to give up living in a secure environment and being rich.
+
+\emph{Segment V}. This segment, comprising 14.5\% of the sample, hardly differentiates between the values. They consider all values of about equal importance. As most other segments, they consider benevolence and universalism values more and power and achievement values less important, but they do not have clear outspoken value preferences nor do they make clear trade-offs between values. 
+
+\emph{Segment VI}. People in Segment VI (14.3\%) consider the values self-direction, stimulation, hedonism and achievement as important motivational goals in their lives. Of the two benevolence values, only being loyal to friends is relatively more important. It should be noted that the values considered important are all focused on own pleasure and success. This can also be seen in the importance, relative to other segments, attached to being rich and being respected by others. Compatible with this, universalism is considered a far less important motivational goal. Furthermore this is the only segment in which taking care of nature and the environment (UN3) is considered unimportant.
+
+Information on socio-demographics and the evolution of values segment sizes over time can be found in the \hyperref[S:App]{Supporting Information}. Next, we consider how the relations between values segments and voting developed over time. 
+
+
+\begin{knitrout}\footnotesize
+\definecolor{shadecolor}{rgb}{0.961, 0.961, 0.961}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in table(essparty\$party, NLParty\$party): all arguments must have the same length}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in `\$<-.data.frame`(`*tmp*`, party, value = structure(c(10L, 5L, : replacement has 9511 rows, data has 9086}}\end{kframe}
+\end{knitrout}
+
+
+
+\subsection*{Values Segments and Voting Over Time}
+
+
+\begin{knitrout}\footnotesize
+\definecolor{shadecolor}{rgb}{0.961, 0.961, 0.961}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{Loading required package: RColorBrewer}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{Coordinate system already present. Adding new coordinate system, which will replace the existing one.}}\end{kframe}
+\end{knitrout}
+
+
+
+
+
+\begin{figure}
+\begin{center} 
+  \includegraphics[width=0.95\textwidth]{figures/Paper-CA-plots-years-1-edit} 
+\end{center}
+\caption{Correspondence analysis for the segments and reported votes, using the adjusted poststratification weights applied to the posterior probabilities of Equation \eqref{E:posterior}.  The symbols for the segments are faded according to the explained inertia so that darker points fit better. No shading was done for the political parties. Each panel shows a different year. Figure~\ref{F:CA-plot-all-years} in the \hyperref[S:App]{Supporting Information} shows all years in a single plot. The closer a party is to a segment, the more likely it is that this segment will vote for the party.}\label{F:CA-plot}
+\end{figure}
+
+To gain insight into the relationship between value segments and voting over time, we performed a correspondence analysis \citep[CA; e.g.][]{hoffman1986, greenacre2007}. CA can be used to analyse and vizualize the value segments together with the political parties for which they voted. This makes it easier to interpret our results. For this analysis, a cross-tabulation of the individual posterior probabilities in Equation \eqref{E:posterior} was made with the value segments in the columns and the political parties, split into the five waves of the ESS, in the rows. The CA was used to assess the links between the rows and columns in this table simultaneously (see Figure~\ref{F:CA-plot}). The results in the table can be shown effectively in two dimensions (with a fit of 78.6\% in two dimensions).
+
+Figure~\ref{F:CA-plot} shows the column-principal map of the CA \citep{greenacre2007}, where each of the political parties are labelled, and each year is plotted in a separate panel. We use colours to categorize the parties according to their background: green for religious, red for socialist, blue for right-wing political parties, black for the populist parties, and yellow for the libertarian parties. The black triangles represent the seven value segments. The darker the points, the better the explained inertia (fit) of the points -- see \citet{greenacre2007} for more information on inertia. Across the five waves, three value segments are quite distinct, namely the Segments III, IV, and VI. Segment I is located in between the Segments III and IV and lies more towards the centre of the graph. Segments V and VII lie close together; however, Segment VII fits less well into the CA solution, suggesting possible measurement issues in this segment. Last, Segment II also fit less well into the display and should therefore not be strongly interpreted.
+
+The first dimension divides Segment III from Segments IV and VI. In value terms this is a distinction between having an emphasis on the three values conformity, tradition, and security or de-emphasizing these values. The second dimension is a distinction between Segment IV, and to a lesser extent Segment III, and Segment VI. This is a distinction between an emphasis on universalism values versus achievement values. The first dimension distinguishes the religious parties (SGP, CU and CDA) from the non-religious parties (e.g., GL, D66 and VVD). The second dimension distinguishes the libertarian parties (GL and PvdD) from the right-wing party (VVD) and the populist parties.
+
+The religious parties lie in the upper left quadrant, strongly associated with Segment III. They are ordered from the most traditional SGP to the more moderate CDA, and are clearly distinguished from the libertarian and authoritarian parties towards the right of the graph. The libertarian and left parties, namely the PvdD, D66, GL and PvdA, are located alongside each other to the top right quadrant of the figure. The more strict libertarian left-wing parties, the GL and PvdD, are located in the upper right corner, whereas the more centrist PvdA is located towards the origin. The populist and right wing parties form a tight cluster slightly below the centre. These parties (LPF, PVV, VVD and LN) have tight historical connections, as for instance the populist LPF was formed by a former member of LN, and the PVV leader similarly was a former member of parliament for the right-wing VVD. 
+
+In a volatile political landscape, the party voted for may change over time and and we postulate that segments vote for the party most congruent with their values. Contrary to basic human values, political values are less stable over time; in particular, basic human values underlie specific political values (Schwartz, 1994). In Figure~\ref{F:CA-plot}, the religious parties hardly change position over time: they remain closest to Segment III over the years. The left-wing parties (PvdA and SP) have moved towards the libertarian parties and closer to each other. The right-wing party remained at about the same position over time; however, it is also this position that some populist parties have taken. The only populist party that took a position in between segments IV and VI appeared (and disappeared) in 2010. Finally, the non-voters are located close to the populist parties; this position hardly changed over time. 
+
+
+In the final results section, we show that our values segments are predictive of voting.
+
+\subsection*{Predicting Voting with Values Segments}
+
+
+
+% latex table generated in R 4.2.1 by xtable 1.8-4 package
+% Fri Oct  7 18:22:44 2022
+\begin{table}[ht]
+\centering
+\begingroup\footnotesize
+\begin{tabular}{rlrrlrrl}
+  \toprule
+ & Model & Resid. df & Resid. Dev & Test &    Df & LR stat. & p--value \\ 
+  \midrule
+1 & Intercept only & 44035 & 31045.8 &  &  &  &  \\ 
+  2 & Demographics & 44010 & 30063.4 & 1 vs 2 & 25 & 982.41 & $<$0.001 \\ 
+  3 & Demographics, ESS wave & 43990 & 29311.9 & 2 vs 3 & 20 & 751.47 & $<$0.001 \\ 
+  4 & Demographics, ESS wave, Segments & 43960 & 28531.7 & 3 vs 4 & 30 & 780.18 & $<$0.001 \\ 
+  5 & Demographics, ESS wave, Items & 43885 & 27627.3 & 4 vs 5 & 75 & 904.47 & $<$0.001 \\ 
+   \bottomrule
+\end{tabular}
+\endgroup
+\caption{Analysis of variance table for five multinomial logit models estimating the parties voted for by ESS respondents. Recalibrated post-stratification weights were used for all models, with only the 8841 persons who disclosed their vote being used. Model 4 uses the values segments membership probabilities derived from the LC-BML model fit. Model 5 uses the original items as measured in the ESS. The abbreviations used are: df = degrees-of-freedom; Resid. Dev = residual deviance; LR stat = likelihood-ratio statistic.} 
+\label{T:anova-mlogit}
+\end{table}
+
+
+To validate the values segments obtained and discussed above, we performed a multinomial logistic regression analysis to predict voting using values segment membership probabilities. The dependent variable has six categories: five categories for political orientation (left-wing, libertarian, populist, religious, or right-wing), and the sixth category is reserved for non-voters. Also, combining parties ensures that each category has enough observations to be modelled. The independent variables used are socio-demographics, the ESS wave number (wave 2002 as a reference), and the values segment membership probabilities. We estimate nested models to provide insight into the additional predictive value of each step.
+
+Table~\ref{T:anova-mlogit} compares multinomial logit models using likelihood ratio tests. The models are listed in order of increasing complexity. All the effects included are main effects.
+
+
+% clear page for sideways table
+\clearpage
+% latex table generated in R 4.2.1 by xtable 1.8-4 package
+% Fri Oct  7 18:22:46 2022
+\begin{sidewaystable}[ph!]
+\centering
+\begingroup\scriptsize
+\begin{tabular}{lrrrrrrrrrrrrrrr}
+  \toprule
+  & \multicolumn{3}{c}{Left-wing}& \multicolumn{3}{c}{Libertarian}& \multicolumn{3}{c}{Populist}& \multicolumn{3}{c}{Religious}& \multicolumn{3}{c}{Right-wing}\\ \cmidrule{2-16} & $\hat{\beta}$ & SE & p & $\hat{\beta}$ & SE & p & $\hat{\beta}$ & SE & p & $\hat{\beta}$ & SE & p & $\hat{\beta}$ & SE & p \\ \midrule
+Intercept & 0.86 & 0.32 & 0.008 & -0.20 & 0.64 & 0.757 & 0.13 & 0.41 & 0.758 & 1.22 & 0.34 & $<$0.001 & 0.66 & 0.41 & 0.111 \\ 
+  Gender (Male) & -0.00 & 0.07 & 0.975 & -0.17 & 0.09 & 0.054 & 0.03 & 0.09 & 0.781 & 0.09 & 0.07 & 0.163 & 0.21 & 0.08 & 0.006 \\ 
+  Education (1--10) & -1.14 & 0.10 & $<$0.001 & -2.12 & 0.15 & $<$0.001 & -0.59 & 0.14 & $<$0.001 & -1.29 & 0.10 & $<$0.001 & -1.93 & 0.12 & $<$0.001 \\ 
+  Education (11--15) & -0.82 & 0.09 & $<$0.001 & -1.32 & 0.11 & $<$0.001 & -0.35 & 0.12 & 0.004 & -0.72 & 0.09 & $<$0.001 & -0.84 & 0.09 & $<$0.001 \\ 
+  Age (15--34) & -1.26 & 0.10 & $<$0.001 & -1.22 & 0.15 & $<$0.001 & -0.62 & 0.15 & $<$0.001 & -1.50 & 0.10 & $<$0.001 & -1.93 & 0.12 & $<$0.001 \\ 
+  Age (35--59) & -0.42 & 0.09 & $<$0.001 & -0.39 & 0.13 & 0.002 & -0.06 & 0.13 & 0.617 & -0.77 & 0.09 & $<$0.001 & -0.80 & 0.10 & $<$0.001 \\ 
+  Wave (2004) & 0.55 & 0.10 & $<$0.001 & -0.09 & 0.13 & 0.501 & -1.05 & 0.14 & $<$0.001 & 0.10 & 0.10 & 0.299 & 0.25 & 0.12 & 0.029 \\ 
+  Wave (2006) & 0.62 & 0.10 & $<$0.001 & -0.72 & 0.15 & $<$0.001 & -4.41 & 0.60 & $<$0.001 & 0.10 & 0.10 & 0.326 & 0.04 & 0.12 & 0.743 \\ 
+  Wave (2008) & 0.58 & 0.10 & $<$0.001 & -0.44 & 0.14 & 0.002 & -1.05 & 0.14 & $<$0.001 & 0.04 & 0.10 & 0.674 & -0.08 & 0.12 & 0.501 \\ 
+  Wave (2010) & -0.00 & 0.10 & 0.974 & -0.20 & 0.12 & 0.102 & -0.39 & 0.11 & $<$0.001 & -0.84 & 0.10 & $<$0.001 & -0.09 & 0.11 & 0.407 \\ 
+  Segment I & 0.77 & 0.31 & 0.014 & 1.70 & 0.63 & 0.007 & 0.17 & 0.40 & 0.664 & 0.97 & 0.33 & 0.004 & 0.57 & 0.41 & 0.161 \\ 
+  Segment II & 0.36 & 0.32 & 0.257 & 1.31 & 0.64 & 0.040 & 0.42 & 0.40 & 0.289 & 0.70 & 0.34 & 0.038 & 1.21 & 0.41 & 0.003 \\ 
+  Segment III & 0.17 & 0.32 & 0.591 & 0.73 & 0.65 & 0.261 & -0.23 & 0.41 & 0.582 & 1.26 & 0.34 & $<$0.001 & 0.33 & 0.41 & 0.428 \\ 
+  Segment IV & 0.93 & 0.32 & 0.003 & 2.19 & 0.63 & 0.001 & -0.29 & 0.42 & 0.479 & -0.23 & 0.35 & 0.512 & 0.38 & 0.41 & 0.354 \\ 
+  Segment V & -0.53 & 0.32 & 0.098 & 0.02 & 0.65 & 0.978 & 0.19 & 0.40 & 0.630 & -0.17 & 0.34 & 0.612 & -0.01 & 0.41 & 0.985 \\ 
+  Segment VI & -0.12 & 0.32 & 0.716 & 1.37 & 0.64 & 0.032 & 0.26 & 0.40 & 0.513 & -0.21 & 0.35 & 0.547 & 1.16 & 0.41 & 0.004 \\ 
+   \bottomrule
+\end{tabular}
+\endgroup
+\caption{Results for the multinomial logit model fitted to voting behaviour. The model summarized here is model 4 in Table~\ref{T:anova-mlogit}. The reference category for the response variables is the non-voters. The remaining five categories are shown in different sets of columns. The abbreviations used are: $\hat{\beta}$ = estimated regression coefficient; SE = standard error of the coefficient; p = p-value for testing whether the coefficient differs significantly from zero or not. The reference categories for the categorical variables are not shown in the table. These are: Gender (Female), Education (16+ years), Age (60--96), Wave (2002) and Segment VII.} 
+\label{T:mlogit-fit}
+\end{sidewaystable}
+
+
+The results are shown in Table~\ref{T:mlogit-fit}. Differences in voting for political parties can be explained by both socio-demographics and value segment membership. Voters are higher educated and older than non-voters (coefficients for education and age are negative and significant); only voters for the populist parties are more similar to the non-voters in age. Voters for the right wing party are more often male (.21, p < .01) and less often belong to the low and middle education categories (-1.93 and -.84, both p < .001). The coefficients for the waves show whether a political orientation gained or lost votes over the years. These results show that in the 2010 election the religious parties lost votes to non-voters (reference category). Furthermore, after 2002 populist parties lost votes, but this trend is turning in 2010.
+
+The seven values segments help predict which group of parties is voted for. People belonging to segment I vote either for the left-wing parties (.77, p <.01), for libertarian (1.70, p <.01) or for the religious parties (.97, p <.001), whereas people in segment II tend to vote right-wing (1.21, p <.001) or libertarian (1.31, p < .05). Segment III, with strong traditional values, prefers the religious parties over the other parties (1.26, p <.001). Segment IV votes for either left wing (.93, p <.001) or libertarian parties (2.19, p < .001). Segment V is interesting as people in this segment seem to be against voting; we can see that the coefficients do not differ from the non-voters. Lastly segment VI votes for the right wing party (1.16, p < .001 ) or for one of the libertarian parties (1.37, p < .05). The libertarian parties compete for voters from 4 segments (I, II, IV and VI); the religious parties obtain voters from 1 segment (III).
+
+We expected that we would find a segment emphasizing universalism, self-direction and stimulation values and opposing power and security values voting for libertarian parties; segment IV has a strong preference for libertarian parties, confirming hypothesis 1. We further expected that there would be a segment emphasizing power and security values important and opposing universalism values unimportant voting for right-wing parties. We did not find such a segment; therefore we reject hypothesis 2. We also find that there is a segment (III) emphasizing the three values security, conformity and tradition, opposing the values self-direction, stimulation and hedonism and which  considers benevolence a stronger guiding principle than universalism voting for religious parties. We thus accept hypothesis 3. 
+
+\section*{Discussion and Conclusion}
+
+There is a clear link between the seven value segments based on Schwartz' values and people's voting behaviour for political parties. Our approach using the LC-BML model, followed by a multinonial regression and a correspondence analysis, clearly reveals distinct value segments that are attracted to different political parties. The religious, left-wing/libertarian and right-wing parties each appeal to people with different distinct values profiles. People with less outspoken values profiles feel attracted to the populist parties or do not vote. 
+
+This study distinguishes itself from previous studies on human values and voting in multiple ways. First, we focus on segments instead of considering the whole population as one group. Specifically, we relate value segments to voting for specific political parties. With our approach we are not only able to confirm established relationships between single values and political orientation, such as a correlation between the value universalism and a left-wing orientation \citep[e.g,][]{caprara2006}, but also to determine which combinations of values are related to voting behaviour. In this we confirm the existence of a values structure showing the oppositions and compatibities between values of an individual as shown by Borg et al. (2015) and are able to relate this to specific political orientations. Second, we correct for response styles, which is a neglected issue in research on human values and voting. Third, our study is the first that shows the relationship between values and voting behaviour over a period longer than a decade; the longitudinal study by \citet{schwartz2010} covered one month. Fourth, we treat all 21 value items separately, instead of reducing the items to the 10 values they set out to measure \citep{piurko2011,caprara2006}, or to their respective higher-order value domains, such as self-transcendence and conservation \citep{barnea1998}. We are able to show that value segments not only differ with respect to the importance they attach to (higher-order) values, but also with respect to specific items. For example, in most segments the two items measuring power are far apart. Also segments distinguish themselves on universalism focused on nature, separating segment VI from the other segments; the latter result would have been hidden when all universalism items would have been combined in one score for universalism.  
+
+The LC-BML model identified 20 different response style segments, providing further empirical evidence of the prevalence of response styles in rating scale data. Importantly, our results show that the value segments and response style segments are not independent. Two more problematic value segments, namely segments V and VII in particular, are closely associated with specific response styles. Together, these comprise 15.7\% of the sample. Hence the answers of a significant number of respondents are mainly driven by specific response styles. In the other segments we might consider the way in which people use the rating scale a communication style. With a communication style, no adjustment, or simple adjustments, may suffice \citep{he2015}. Our study indicates that taking into account response styles in value measurement is important, since ignoring response styles can lead to segments that differ only with respect to rating scale use, and not in value preference. Our study also suggests that the response styles present in empirical data are not limited to one specific style such as extreme responding \citep[for example,][]{liu2015,jong2008}: people use many different response styles that all might invalidate our findings.
+
+The relations between the value segments and voting behaviour are quite stable over time. This is in line with the literature that also shows that when change occurs the hierarchy of importance of the values the relative order of importance of the values stays about similar \citep{vecchione2016} . As evidenced in the correspondence analysis (Figure~\ref{F:CA-plot}), specific segments tend to vote for specific (sets of) political parties. For example, segment III tends to vote for the religious parties (SGP, CU and CDA) relatively frequently, whereas segment VI votes more frequently for the right wing party, VVD, or a libertarian party and people in segment IV choose one of the left or libertarian parties. 
+
+
+A remarkable segment is segment V. This segment either tends not to vote, or, when voting, likely NOT votes for one of the existing parties. They might vote for a populist party, but that is not shown in our results. Looking at the literature, a reason for their (non)-voting might be  value incongruence with the existing parties, as suggested by \citet{caprara2012}. However, the values profile of segment V is not very clear; they consider all values of about equal importance. Value incongruence with specific parties then might be less obvious as we found that they are less likely to vote for all political orientations. Another possibility is that people in Segment V have differentiated less between items in the survey, which might be due to less education or lack of motivation to answer the items (Krosnick, 1991). Still, Segment V is a stable segment in our correspondence analysis, indicating that such a segment is valid and stable and will likely not vote, or when they vote may choose one of the newly emerging (populist) parties.
+
+Our results also pose interesting questions for further research. For example, we have seen that Segment III has shrunk between 2002 and 2010, while segment IV has grown over the same period. In that period, the Netherlands has become more prosperous, as evidenced by the growth in the GDP per capita. Increased prosperity leads people to consider postmodernist values such as independence to be more important \citep{inglehart2000}, making a segment considering universalism values important larger. Further research might focus on value change and the effects that might have on the size of our respective value segments and on voting behaviour. The LC-BML model is able to detect groups of persons who did not provide much substantive information in their responses, as evidenced by Segment  V. For these segments, it is difficult to gauge their true opinions from the data. This is a significant finding since it shows that also in well-designed surveys advanced analysis methods can only extract limited information for a substantial number of respondents. Further research might focus on determining why such persons answer in the way they do, and how survey design elements can be used to counteract this type of noninformative responding. Fortunately, these persons tend to answer using a small set of typical response styles, enabling survey researchers to detect them.
+
+\section*{Supporting Information}\label{S:App}
+
+
+\begin{knitrout}\footnotesize
+\definecolor{shadecolor}{rgb}{0.961, 0.961, 0.961}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in rewtab[-match(c("{}Missing"{}, "{}Blank"{}), rownames(rewtab)), ]: only 0's may be mixed with negative subscripts}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in rewtab[-match(c("{}Missing"{}, "{}Blank"{}), rownames(rewtab)), ]: only 0's may be mixed with negative subscripts}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in xtable(100 * rewtab.prop, digits = 1): object 'rewtab.prop' not found}}\end{kframe}
+\end{knitrout}
+\begin{knitrout}\footnotesize
+\definecolor{shadecolor}{rgb}{0.961, 0.961, 0.961}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in rewtab[-match(c("{}Missing"{}, "{}Blank"{}), rownames(rewtab)), ]: only 0's may be mixed with negative subscripts}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in rewtab.min["{}PvdD"{}, "{}ESS3"{}] <- 0: object 'rewtab.min' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in outer(rep(1, nrow(electab)), rewtab.tots): object 'rewtab.tots' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in na.omit(rewtab.min[, 1]): object 'rewtab.min' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in eval(expr, envir, enclos): object 'rewtab.min' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in pchisq(chi2002.rew, df = length(na.omit(rewtab.min[, 1])) - 1): object 'chi2002.rew' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in na.omit(rewtab.min[, 2]): object 'rewtab.min' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in eval(expr, envir, enclos): object 'rewtab.min' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in pchisq(chi2004.rew, df = length(na.omit(rewtab.min[, 2])) - 1): object 'chi2004.rew' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in na.omit(rewtab.min[, 3]): object 'rewtab.min' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in eval(expr, envir, enclos): object 'rewtab.min' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in pchisq(chi2006.rew, df = length(na.omit(rewtab.min[, 3])) - 1): object 'chi2006.rew' not found}}\end{kframe}
+\end{knitrout}
+
+
+\begin{table}
+\renewcommand{\arraystretch}{1.25}
+\centering
+\footnotesize
+\begin{tabular}{lccccccc}
+\toprule
+   & \multicolumn{4}{c}{\textbf{Election}} \\ \cmidrule{2-7}
+\textbf{Party} & \textbf{2002} & \textbf{2003} & \textbf{2006} & \textbf{2010} & \textbf{2012} & \textbf{2017}\\ 
+\midrule
+VVD & 15.4 & 17.9 & 14.7 & 20.5 & 26.6 & 21.3 \\ 
+PvdA & 15.1 & 27.3 & 21.2 & 19.6 & 24.8 & 5.7 \\ 
+PVV & -- & -- & 5.9 & 15.4 & 10.1 & 13.1 \\ 
+CDA & 27.9 & 28.6 & 26.5 & 13.6 & 8.5 & 12.4 \\ 
+SP & 5.9 & 6.3 & 16.6 & 9.8 & 9.7 & 9.1 \\ 
+D66 & 5.1 & 4.1 & 2.0 & 6.9 & 8.0 & 12.2 \\ 
+GL & 7.0 & 5.1 & 4.6 & 6.7 & 2.3 & 9.1 \\ 
+CU & 2.5 & 2.1 & 4.0 & 3.2 & 3.1 & 3.4 \\ 
+SGP & 1.7 & 1.6 & 1.6 & 1.7 & 2.1 & 2.1 \\ 
+PvdD & -- & 0.5 & 1.8 & 1.3 & 1.9 & 3.2 \\ 
+50PLUS & -- & -- & -- & -- & 1.9 & 3.1 \\ 
+TON & -- & -- & -- & 0.6 & -- & -- \\ 
+LPF & 17.0 & 5.7 & 0.2 & -- & -- & -- \\ 
+LN & 1.6 & 0.4 & -- & -- & -- & -- \\ 
+DENK & -- & -- & -- & -- & -- & 2.1 \\ 
+FvD & -- & -- & -- & -- & -- & 1.8 \\ 
+Other & 0.7 & 0.4 & 1.0 & 0.5 & 0.9 & 1.5 \\ 
+\midrule
+Valid votes & 9 501 152 & 9 654 475 & 9 838 683 & 9 416 001 & 9 424 235 & 10 516 041 \\ 
+Blank/Invalid & 14 074 & 12 127 & 16 315 & 26 976 & 37 988 & 47 415 \\ 
+Total votes & 9 515 226 & 9 666 602 & 9 854 998 & 9 442 977 & 9 462 223 & 10 563 456 \\ 
+\midrule
+Electorate & 12 035 935 & 12 076 711 & 12 264 503 & 12 524 152 & 12 689 810 & 12 893 466\\
+Turnout & 79.1\% & 80\% & 80.4\% & 75.4\% & 74.6\% & 81.9\% \\
+\bottomrule
+\end{tabular}
+\caption{The percentage of votes won by the different political parties in the six Dutch elections, as well as the total number of votes cast and the size of the electorate. (Source: \href{http://www.verkiezingsuitslagen.nl}{www.verkiezingsuitslagen.nl})}
+\label{T:NL_perc_vote}
+\end{table}
+
+The official national election results are shown in Table~\ref{T:NL_perc_vote}. 
+
+\subsection*{Bilinear Decompositions in the LC-BML Model}
+
+We now describe the bilinear decomposition of the parameters used in the LC-BML model. In order to reduce the number of parameters in \eqref{E:linpred}, \citet{vanrosmalen2010} introduce bilinear decompositions which also make it possible to display all effects in $P$-dimensional graphs. Let $\mat{B}_{l}$ be the matrix with $\vect{\beta}_{1l}, \ldots, \vect{\beta}_{Kl}$ as rows, and gather the $\gamma_{jk \, | \, s}$ in the $J \times K$ matrix $\mat{\Gamma}_{s}$. The bilinear restrictions are imposed by requiring that
+\begin{equation}
+  \mat{B}_{l} = \mat{F} \mat{G}_{l}^{'} \; \text{and} \; \mat{\Gamma}_{s}^{'} = \mat{F} \mat{H}_{s}^{'},
+\end{equation}
+where $\mat{F}$, $\mat{G}_{l}$ and $\mat{H}_{s}$ has $P$ columns. Typically, the dimensionality of the graphical representations is chosen to be $P = 1$, $2$ or $3$ so that it can be displayed easily. The matrix $\mat{F}$ contains the coordinates of the $K$ rating categories, $\mat{G}_{l}$ the coordinates for the categories of socio-demographic variable $l$, and $\mat{H}_{s}$ the coordinates of the $J$ items in value segment $s$ in $P$-dimensional space. Under these bilinear restrictions, \eqref{E:linpred} becomes
+\begin{equation}
+  \eta_{ijk \, | \, r, s} = 
+      \alpha_{k \, | \, r} + 
+      \sum_{l=1}^{L} \sum_{p=1}^{P} f_{kp} \vect{g}_{lp}^{'} \vect{x}_{il} + 
+      \sum_{p=1}^{P} f_{kp} h_{jp \, | \, s},
+      \label{E:linpred_bilin}
+\end{equation}
+with $f_{kp}$ and $h_{tp \, | \, s}$ being the elements of $\mat{F}$ and $\mat{H}_{s}$ respectively, and $\vect{g}_{lp}$ the $p$th column of $\mat{G}_{l}$. Besides these bilinear restrictions, several identifiability contraints must be imposed on the parameters in \eqref{E:linpred_bilin} -- details are given in \citet{vanrosmalen2010}.
+
+\subsection*{Biplots}
+
+The biplots produced by the LC-BML model, and constructed based on these bilinear decompositions, are shown in Figures~\ref{F:biplots1} and \ref{F:biplots2}. These are the figures on which the simplified Figure~\ref{F:seg_barplots} are based. The positions of the value items vary across all values segments, but the locations of the response categories remain the same. 
+
+The magnitude of the effect of each item on the probability to endorse a specific rating category is determined by the inner product (also known as the scalar or dot product) between the position of the item in that segment and the vector representing the rating. This can be determined by multiplying the length of the projection of the item point onto the rating vector by the length of the rating vector. Simply put, items which have large positive projections are associated with large probabilities of endorsing that rating, and vice versa. For example, in Segment I the item PO1 has a very large positive projection on rating category 6 (``Not like me at all''), which implies that in Segment I people do not value this item highly. In contrast, item UN1 has a large positive projection on rating category 1 (``Very much like me''), implying that this segment values this aspect of universalism most highly.
+
+\begin{knitrout}\footnotesize
+\definecolor{shadecolor}{rgb}{0.961, 0.961, 0.961}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\color{warningcolor}{Warning in readChar(con, 5L, useBytes = TRUE): cannot open compressed file 'NLCoordinates.RData', probable reason 'No such file or directory'}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in readChar(con, 5L, useBytes = TRUE): cannot open the connection}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in substr(Items\$Value, 1, 2): object 'Items' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in substr(Items\$Value, 3, 3): object 'Items' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in eval(expr, envir, enclos): object 'Items' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in eval(expr, envir, enclos): object 'Items' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in eval(expr, envir, enclos): object 'Items' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in eval(expr, envir, enclos): object 'Items' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in FUN(X[[i]], ...): object 'xlims2' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in FUN(X[[i]], ...): object 'ylims2' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in as.matrix(Ratings[, -1]): object 'Ratings' not found}}\end{kframe}
+\end{knitrout}
+% \begin{landscape}
+\begin{figure}
+\begin{subfigure}{.5\textwidth}
+   \includegraphics[width=\textwidth]{figures/Paper-biplots-1-edit2}
+\end{subfigure}
+\hfill
+\begin{subfigure}{.5\textwidth}
+   \includegraphics[width=\textwidth]{figures/Paper-biplots-2-edit2}
+\end{subfigure} 
+
+\bigskip
+\begin{subfigure}{.5\textwidth}
+   \includegraphics[width=\textwidth]{figures/Paper-biplots-3-edit2}
+\end{subfigure}
+\hfill
+\begin{subfigure}{.5\textwidth}
+   \includegraphics[width=\textwidth]{figures/Paper-biplots-4-edit2}
+\end{subfigure} 
+
+\bigskip
+\begin{subfigure}{.5\textwidth}
+   \includegraphics[width=\textwidth]{figures/Paper-biplots-5-edit2}
+\end{subfigure}
+\hfill
+\begin{subfigure}{.5\textwidth}
+   \includegraphics[width=\textwidth]{figures/Paper-biplots-6-edit2}
+\end{subfigure} 
+\caption{Biplots for values segments I -- VI. The colours and symbols are the same for all plots, and is explained in the legends of Figure~\ref{F:biplots2}.}\label{F:biplots1}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+  \includegraphics[width=0.6\textwidth]{figures/Paper-biplots-7-edit2} 
+\end{center}
+\caption{Biplot for values segment VII. The legends displayed here also apply to the panels in Figure~\ref{F:biplots1}. Different colours are used for different values in Schwartz' values system, and the symbol corresponds to the number of the item used to measure that value.}\label{F:biplots2}
+\end{figure}
+
+\subsection*{Correspondence Analysis of Values Segments and Voting Behaviour}
+
+Figure~\ref{F:CA-plot-all-years} shows a version of Figure~\ref{F:CA-plot} where all the years are presented in a single plot. The points indicating the same political party are connected by lines.
+
+\begin{figure}
+\begin{center} 
+  \includegraphics[width=0.75\textwidth]{figures/Paper-CA-plot-1-edit} 
+\end{center}
+\caption{Correspondence analysis for the segments and reported votes, using the adjusted poststratification weights applied to the posterior probabilities of Equation \eqref{E:posterior}. The symbols for the segments are faded according to the explained inertia so that darker points fit better. No shading was done for the political parties.}\label{F:CA-plot-all-years}
+\end{figure}
+
+
+\subsection*{Values Segments, Socio-Demographics and Stability Over Time}
+
+\begin{table}
+\renewcommand{\arraystretch}{1.25}
+\centering
+\footnotesize
+\begin{tabular}{cccccccccr}
+  \toprule
+ & \multicolumn{2}{c}{\textbf{Gender}}  & \multicolumn{3}{c}{\textbf{Education Years}} & \multicolumn{3}{c}{\textbf{Age}} &  \\ \cmidrule(lr){2-3} \cmidrule(lr){4-6} \cmidrule(lr){7-9}
+ \textbf{Segment} & \textbf{Male} & \textbf{Female} & \textbf{1--10} & \textbf{11--15} & \textbf{16--30} & \textbf{15--34} & \textbf{35--59} & \textbf{60--96} & \textbf{Size} \\ 
+  \midrule
+I & 38.9 & 61.1 & 28.4 & 50.1 & 21.5 & 18.6 & 52.0 & 29.5 & 22.0 \\ 
+II & 52.4 & 47.6 & 22.2 & 48.9 & 28.8 & 30.2 & 50.0 & 19.8 & 18.6 \\ 
+III & 43.7 & 56.3 & 40.6 & 44.7 & 14.6 & 12.8 & 45.3 & 42.0 & 14.5 \\ 
+IV & 49.3 & 50.7 & 14.0 & 47.9 & 38.1 & 34.2 & 52.2 & 13.6 & 15.0 \\ 
+V & 53.4 & 46.6 & 35.2 & 46.6 & 18.3 & 33.9 & 41.7 & 24.4 & 14.5 \\ 
+VI & 63.3 & 36.7 & 15.1 & 51.6 & 33.3 & 62.0 & 33.6 & 4.4 & 14.3 \\ 
+VII & 42.7 & 57.3 & 29.7 & 53.9 & 16.4 & 26.3 & 41.1 & 32.6 & 1.1 \\ \midrule
+  Average & 49.1 & 50.9 & 26.5 & 49.1 & 24.5 & 31.1 & 45.1 & 23.8 & 100.0 \\ 
+   \bottomrule
+\end{tabular}
+\caption{The distribution of the socio-demographic variables across value segments, and the segment sizes. All values are expressed as percentages per row and variable, except for the segment sizes. Unadjusted post-stratification weights are applied.}
+\label{T:demo_vs_segs}
+\end{table}
+
+To assess whether segments differ on socio-demographic characteristics, we calculated distributions of age, education and gender for the respective segments. These distributions are calculated by summing the post-stratification weights of all respondents who fall in a specific category (e.g., all males). Segment membership is incorporated by weighting the post-stratification weights with the estimates of each respondent's posterior segment-membership probabilities in \eqref{E:posterior}. Table~\ref{T:demo_vs_segs} shows the distribution of the socio-demographic variables across the segments. The segments differ with respect to socio-demographic characteristics. Segment I contains more females (61.1\%) and fewer people younger than 34 (18.6\% versus 31.1\% in the population). Segment II does not differ much from the average in the population. Segment III differs from the average, it comprises relatively more people who are lower educated (40.6\%), female (56.3\%), and aged above 60 (42.0\%). Segment VI distinguishes itself by containing many highly educated (38.1\% versus 24.5\% in the population) and people in the middle age category 35 to 59 (52.2\%). As Segment III, segment V is low educated, but in contrast to segment III there are people in all age categories and relatively more males (53.4\%). In Segment VI, the majority is highly educated (33.3\%) young (62.0\%) and  male (63.3\%). These differences in sociodemographics are in line with relationships between values and sociodemographics found in the literature (Schwartz and Rubel, 2009).
+
+As shown in Table~\ref{T:segsizes_vs_yr}, the sizes of the value segments are relatively stable over time. This is expected as values at a higher aggregation level hardly change \citep{schwartz2006}. Segment IV has grown somewhat over the years from 12.8\% to 16.3\%, whilst Segments III and V have decreased in size from 16.1\% and 16.0\% to 12.3\% and 13.2\% respectively. Overall, Segment VII is estimated to contain only 1.1\% of the population, while the other segments range in size from 14.3\% to 22.0\%. Segment VII consisting of people who had many missing values (no answer) on a subset of the items seems stable across waves of the ESS.
+
+\bibliographystyle{poq}
+\bibliography{values} 
+
+\end{document}
